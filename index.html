@@ -1,0 +1,732 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scale=no">
+
+<title>邢帅教育练习</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css"></link>
+
+<style>
+li{list-style:none;}
+body{background-color:transparent;}
+#header{z-index:100;background-color:transparent;color:#848e99;}
+#header a{color:#848e99;}
+#header .navbar {z-index:100;background-color:transparent;}
+/*导航底部边框特效*/
+#header .navbar-nav .bottom1,.bottom2{
+    position:absolute;
+    background:#fff;
+	width: 0;
+	height:2px;
+	bottom:0;
+	z-index:1000;
+}
+#header .navbar-nav .bottom1{left:0;margin:0 8px;}
+#header .navbar-nav .bottom2{right:0;margin:0 8px;}
+.navbar-default{background-color:red;}
+#header .btn{border:none;background-color:transparent;color:#848e99;}
+.btn .caret{margin-left:4px;}
+#header .navbar-brand{display:inline-block;width:133px;height:26px;font-weight:900;}
+#header .btn-group{margin-top:8px;text-align:center;color:#848e99;background-color:transparent;}
+#header .navbar-right{margin-right:30px;background-color:transparent;color:#fff;}
+#header .navbar-form{display:inline-block;padding:0;background-color:#fff;border-radius:20px;}
+#header .input-group-btn{text-align:center;width:50px;border:none;position:absolute;}
+#header .navbar-form .form-control:last-child{background-color:transparent;border-radius:20px;display:inline-block;border:none;padding-left:36px;}
+/*.form-control{color:#fff;}*/
+
+.navbar-right p{display:inline-block;padding-left:20px;}
+.navbar-right .nav-phone:hover{cursor:pointer;}
+.nav-img{width:200px;height:200px;background-color:#fff;position:absolute;margin-left:140px;display:none;}
+.nav-img::before{content: "";
+    display:block;
+    border-width: 10px;
+    position: absolute;
+    top:-20px;
+    left: 90px;
+    border-style:dashed dashed solid;
+    border-color:transparent transparent #fff;}
+.navbar-right p a{text-decoration:none;color:#333;}
+
+
+
+
+#carousel-container{top:-70px;}
+.carousel-control{font-size:60px;}
+/*首页内容区域section统一样式*/
+.contain-section{text-align:center;padding:70px 0px;}
+
+#course{margin-top:-70px;}
+#course h2{margin:0 auto;}
+#course h6{padding:0 0 50px;}
+.course-content{margin:0 auto;}
+.course-detail{height:204px;width:20%;float:left;}
+.course-detail a{display:block;width:100%;height:100%;text-decoration:none;}
+.course-detail h5{margin-top:40px;font-size:20px;color:#fff;font-weight:600;}
+.course-detail .course-icon{display: inline-block;margin-top:20px;
+	background:url(img/icon-subject.png) no-repeat;
+    background-color: transparent;
+    background-attachment: scroll;
+    background-position: 0 0;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-size: auto auto;
+	height: 80px;
+	width: 80px;
+	-moz-transition: all 0.5s ease-in-out;
+	-webkit-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;}
+.course-detail .course-icon:hover{transform:rotate(360deg);}
+/*首页内容区域按钮统一样式*/
+.index-btn{margin-top:30px;text-align:center;}
+.index-btn a{width:218px;height:48px;border:1px solid #0099ff;transition:0.5s;line-height:36px;font-size:20px;}
+.index-btn a:hover{background-color:#0099ff;}
+
+.telecast{background:url(img/telecast-bg.jpg) no-repeat;}
+.telecast-container{padding:30px 0;}
+.telecast-img{float:left;width:65%;}
+.telecast-img img{width:100%}
+.telecast-content{float:right;width:30%;text-align:left;}
+.telecast-content h3{font-size:18px;color:#2c2f33;}
+.telecast-content p{font-size:14px;color: #848e99;line-height: 20px;margin: 0 0 25px 0;}
+
+
+.terminal-container{padding:30px;position:relative;}
+.terminal-container h3{font-size:24px;}
+.terminal-container p{padding:20px;color: #848e99;font-size: 13px;}
+.terminal-content{width:24%;float:left;padding:0.5%;}
+.terminal-content-i{display:inline-block;width:200px;height:200px;margin:0 auto;background:url(img/icon-terminal.png) no-repeat;}
+
+.scheme{background:url(img/scheme-bg.jpg) no-repeat center center;}
+.scheme-container{padding:30px;position:relative;}
+.scheme .content-text{width:284px;padding-top:40px;margin-top:40px;margin-left:-80px;color:#666;}
+.scheme .content-text i{display:block;width:42px ;height:42px;background:url(img/icon-scheme.png);margin:0 auto;}
+.scheme .content-text h3{font-size:22px;}
+.scheme .content-text p{font-size:14px;}
+.scheme-content-text-right{margin-right:-80px;}
+
+
+.harvest-container{padding:30px;}
+.harvest-container li{float:left;width:25%;height:150px;margin-top:20px;}
+.harvest-container li i{display:block;width:252px;height:98px;background:url(img/icon-cup.png) no-repeat;}
+.harvest-container li p{font-size:12px;padding:0;margin:0;color:#cc9933;}
+
+
+.join{text-align:center;background:url(img/join.jpg) no-repeat;width:100%;padding:150px 0;}
+.contain-join{padding:0 220px;}
+.join-img{display:inline-block;border-radius:50%;}
+.join-img img{border-radius:50%;}
+.join-content{display:inline-block;width:400px;height:280px;padding:50px 30px;color:#000;background-color:#fff;position:relative;margin-left:-100px;}
+#join-content:before{content:"";
+    display:block;
+    border-width:28px;
+    position:absolute;
+    top:40px;
+    left:-50px;
+    border-style:dashed solid  dashed dashed;
+    border-color:transparent #fff transparent transparent;}
+/*底部区域样式设置*/
+.footer{padding:30px 0;}
+.footer .container{padding:0;}
+.footer-left{display:inline-block;width:910px;}
+
+.friend-link-span{float:left;width:8%;}
+.friend-link-p{float:left;width:90%;}
+.friend-link-p a{display:inline-block;position:relative;padding:0;line-height:14px;padding:0 5px;color:#000;text-decoration:none;font-size:12px;border-left:1px solid #333;}
+.friend-link-p a:first-child{border:none;}
+.friend-link-p a:hover{color:#0099ff;}
+.us-link{width:100%;}
+.footer-right{float:right;width:248px;}
+.footer-right-img{text-align:center;float:left;}
+.footer-right-img:nth-child(2){float:right;margin-left:36px;}
+.footer-right img{width:100px;}
+#approve{display:block;}
+
+
+/*侧边栏区域样式设置*/
+.side-fixed{position:fixed;top:600px;right:50px;width:42px;height:200px;}
+#fixed-list{padding:0;margin:0;}
+#fixed-list li{position:relative;}
+#fixed-list li:nth-child(4){display:none;}
+#fixed-list li a{display:block;width:40px;height:40px;margin-bottom:10px;background:url(img/icon-toolbar.png) no-repeat;border-radius:50%;}
+#fixed-list li:nth-child(1)	a{background-position: 0px 0px }
+#fixed-list li:nth-child(1) a:hover{background-position: -40px 0px;}
+#fixed-list li:nth-child(2)	a{background-position: 0px -80px ;}
+#fixed-list li:nth-child(2) a:hover{background-position: -40px -80px ;}
+#fixed-list li:nth-child(3)	a{background-position: 0px -120px ;}
+#fixed-list li:nth-child(3) a:hover{background-position: -40px -120px ;}
+#fixed-list li:nth-child(4)	a{background-position: 0px -160px;}
+#fixed-list li:nth-child(4) a:hover{background-position: -40px -160px ;cursor:pointer;}
+
+#side-app{position:absolute;right:60px;border:1px solid #CCC;text-align:center;top:0;display:none;background-color:#fff;}
+#side-app:after{
+	content:"";
+    display:block;
+    border-width:10px;
+    position:absolute;
+    top:10px;
+    right:-20px;
+    border-style:dashed dashed dashed solid;
+    border-color:transparent transparent transparent #ccc;
+	}
+#side-app:before{
+	content:"";
+    display:block;
+    border-width:10px;
+    position:absolute;
+    top:10px;
+    right:-19px;
+    border-style:dashed dashed dashed solid;
+    border-color:transparent transparent transparent #fff;
+	z-index:100;
+	}
+#side-app h6{padding-top:10px;margin:0;}
+#side-app img{width:180px;height:180px;padding:0;}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+/*在992像素和1200像素之间的设备上的显示情况*/
+
+.scheme .content-text p{padding:0 60px;}
+
+.join-content{display:inline-block;width:300px;height:180px;padding:10px 10px;color:#000;background-color:#fff;position:relative;margin-left:10px;}
+#join-content:before{content:"";
+    display:block;
+    border-width:20px;
+    position:absolute;
+    top:40px;
+    left:-40px;
+    border-style:dashed solid  dashed dashed;
+    border-color:transparent #fff transparent transparent;}
+	
+.footer-left{display:inline-block;width:74%;}
+
+.friend-link-span{float:left;width:11%;border:1px solid red;}
+.friend-link-p{float:left;width:89%}
+
+.us-link{width:100%;}
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 991px){
+/*在768像素和992像素之间的设备上的显示情况*/
+/*直播区域样式设置*/
+.telecast-content h3{text-align:center;}
+.telecast-content p{display:none;} 
+/*学习方案区域样式设置*/
+.scheme{padding-bottom:100px;padding-top:20px;}
+.scheme-container{position:relative;padding:0;margin:0;}
+
+.scheme .scheme-content-text-left,.scheme-content-text-right{width:50%;padding:0;color:#666;text-align:center;}
+.scheme .content-text{width:100%;padding:0;color:#666;text-align:center;margin:0;}
+.scheme .content-text h3{font-size:18px;color:#ccc;}
+.scheme .content-text p{color:#ccc;padding:0 60px;}
+.scheme-content-text-right{margin-right:0px;}
+.scheme .index-btn a{background-color:#FFF;}
+.scheme .index-btn a:hover{background-color:#9CF;}
+
+/*荣誉区域样式设置*/
+.harvest-container{padding:30px;}
+.harvest-container li{float:left;width:33%;height:150px;margin-top:20px;}
+.harvest-container li i{display:block;width:252px;height:98px;background:url(img/icon-cup.png) no-repeat;}
+.harvest-container li p{font-size:12px;padding:0;margin:0;color:#cc9933;}
+/*加入区域样式设置*/
+.join{text-align:center;background:url(img/join.jpg) no-repeat center center;width:100%;padding:20px;}
+.contain-join{padding:0;}
+.join-img{display:none;}
+.join-content{display:inline-block;width:80%;height:160px;padding:10px;color:#000;background-color:#fff;position:relative;margin:0 auto;}
+#join-content h2{font-size:15px;}
+#join-content p{font-size:12px;}
+#join-content:before{content:""; display:none;}
+/*底部区域样式设置*/
+
+.footer-left{display:inline-block;width:64%;}
+
+.friend-link-span{float:left;width:18%}
+.friend-link-p{float:left;width:82%}
+.us-link{width:100%;}
+
+
+}
+@media screen and (min-width: 320px) and (max-width: 767px){
+/*在小于768像素的设备上的显示情况*/
+#header .navbar .navbar-default{background-color:#000;}
+#header a{color:#000;}
+.course-content{width:100%;}
+.navbar-nav{display:none;}
+.navbar-right{width:40%;float:right;color:#fff;text-align:cenetr;margin-top:-24px;padding-top:8px;right:-20px;}
+.navbar-right a{color:#fff;}
+#header .navbar-right .navbar-form {display:none;}
+#header .navbar-right .nav-phone{display:none;}
+/*轮播区域样式设定*/
+#carousel-container{margin-top:70px;}
+#carousel-container .carousel-indicators{display:none;}
+#carousel-container .carousel-control{font-size:16px;}
+
+/*课程区域样式设定*/
+.contain-section{width:100%;padding:0;}
+
+.course-content{width:100%;padding:0;}
+.contain-section h2{font-size:16px;width:100%;padding:20px 0 10px;}
+.contain-section h6,h4{display:none;}
+.course-detail{padding:0;width:33%;float:left;height:110px;}
+.course-detail a h5{font-size:12px;padding-top:10px;margin:0;}
+.course-detail .course-icon{margin:0;}
+/*公共按钮样式设定*/
+.index-btn{margin-top:20px;text-align:center;margin-bottom:20px;position:relative;}
+.index-btn a{width:118px;height:28px;border:1px solid #0099ff;transition:0.5s;line-height:28px;font-size:15px;padding:0;}
+.index-btn a:hover{background-color:#0099ff;}
+/*互动直播样式设定*/
+.telecast .telecast-container{width:100%;padding:0;}
+.telecast-container .telecast-img{width:100%;}
+.telecast-content{width:100%;}
+.telecast-content h3{font-size:14px;text-align:center;width:32%;display:inline-block;}
+.telecast-content p{display:none;}
+
+/*四大终端样式设定*/
+.terminal{background-color:#ccc;padding-bottom:30px;}
+.terminal-container{width:100%;padding:0;}
+.terminal-img img{width:100%;}
+.terminal-container h3{font-size:12px;}
+.terminal-container p{display:none;}
+.terminal-content{width:25%;float:left;}
+.terminal-content-i{display:none;}
+/*学习方案样式设定*/
+.scheme{padding-bottom:20px;padding-top:20px;}
+.scheme-container{position:relative;padding:0;margin:0;}
+
+.scheme .scheme-content-text-left,.scheme-content-text-right{width:50%;padding:0;color:#666;text-align:center;}
+.scheme .content-text{width:100%;padding:0;color:#666;text-align:center;margin:0;}
+.scheme .content-text h3{font-size:18px;color:#ccc;}
+.scheme .content-text p{display:none;}
+.scheme-content-text-right{margin-right:0px;}
+.scheme .index-btn a{background-color:#FFF;}
+.scheme .index-btn a:hover{background-color:#9CF;}
+/*荣誉区域方案样式设定*/
+.harvest-container{padding-bottom:20px;}
+.harvest-container li{float:left;width:25%;height:50px;}
+.harvest-container li i{display:none;}
+.harvest-container li p{font-size:12px;padding:0;margin:0;color:#cc9933;}
+/*加入邢帅样式设定*/
+
+.join{text-align:center;background:url(img/join.jpg) no-repeat center center;width:100%;padding:20px;}
+.contain-join{padding:0;}
+.join-img{display:none;}
+.join-content{display:inline-block;width:80%;height:160px;padding:10px;color:#000;background-color:#fff;position:relative;margin:0 auto;}
+#join-content h2{font-size:15px;}
+#join-content p{font-size:12px;}
+#join-content:before{content:""; display:none;}
+
+/*footer样式设定*/
+
+.footer-left{display:none;}
+.footer-right{margin:0 auto;width:100%;padding:0 40px;}
+
+
+/*@media and(min-width: 992px) and (max-width: 1199px) {
+/*在992像素和1200像素之间的设备上的显示情况
+
+}
+@media (min-width: 1200px) {
+/*在大于1200像素的设备上的显示情况
+
+}*/
+</style>
+</head>
+<body>
+<header id="header">
+	<nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+        	<a class="navbar-brand" title="邢帅教育" href="#">邢帅教育</a>
+        </div>
+        <ul class="nav navbar-nav visible-lg">
+            <li ><a href="#">首页</a><span class="bottom1"></span><span class="bottom2"></span></li>
+            <li ><a href="#">直播</a><span class="bottom1"></span><span class="bottom2"></span></li>
+            <li><a href="#">课程</a><span class="bottom1"></span><span class="bottom2"></span></li>
+            <li><a href="#">微学院</a><span class="bottom1"></span><span class="bottom2"></span></li>
+            <li><a href="#">就业</a><span class="bottom1"></span><span class="bottom2"></span></li>
+            <li><a href="#">考证</a><span class="bottom1"></span><span class="bottom2"></span></li>
+            <li class="dropdown">
+            	<div class="btn-group">
+                    <button type="button" class="btn dropdown-toggle" data-toggle=
+                    "dropdown">
+                    下载<span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">电脑版</a></li>
+                        <li><a href="#">手机版</a></li>
+                        <li><a href="#">pad版</a></li>
+                        <li><a href="#">TV版</a></li>
+                        <li><a href="#">憨憨熊表情包</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="#">周边</a><span class="bottom1"></span><span class="bottom2"></span></li>
+            <li><a href="#">代理加盟</a><span class="bottom1"></span><span class="bottom2"></span></li>
+            <li><a href="#">社区</a><span class="bottom1"></span><span class="bottom2"></span></li>
+        </ul>
+ 		<div class="navbar-right">
+            <form class="navbar-form " role="search" method="get" action="#">
+                <div class="form-group input-group">
+                	<span class="input-group-btn " />
+                    	<button class="btn btn-default glyphicon glyphicon-search" type="button"></button>
+                    </span>
+                    <input type="text" class="form-control" placeholder="搜索帖子、用户或课程" />
+                </div>
+            </form>
+            <p class="glyphicon glyphicon-phone nav-phone">
+            	<a href="#" target="_blank">
+                	<div class="nav-img">
+            			<img src="img/down-app.png" alt=""/>
+                    </div>
+                </a>
+            </p>
+            <p><a href="#" target="_blank">登录</a></p>
+            <p><a href="#" target="_blank">注册</a></p>
+        </div>
+	</nav>
+</header>
+<div data-ride="carousel" class="carousel slide" id="carousel-container">
+
+    <div class="carousel-inner">
+        <div class="item active"><a href="#" target="_blank"><img alt="第一张图" src="img/1.jpg" /></a></div>
+        <div class="item "><a href="#" target="_blank"><img alt="第二张图" src="img/2.jpg" /></a></div>
+        <div class="item "><a href="#" target="_blank"><img alt="第三张图" src="img/3.jpg" /></a></div>
+        <div class="item "><a href="#" target="_blank"><img alt="第四张图" src="img/4.jpg" /></a></div>
+        <div class="item "><a href="#" target="_blank"><img alt="第五张图" src="img/5.jpg" /></a></div>
+    </div>
+    
+    <ol class="carousel-indicators">
+        <li data-slide-to="0" data-target="#carousel-container" class="active"></li>
+        <li data-slide-to="1" data-target="#carousel-container"></li>
+        <li data-slide-to="2" data-target="#carousel-container"></li>
+        <li data-slide-to="3" data-target="#carousel-container"></li>
+        <li data-slide-to="4" data-target="#carousel-container"></li>
+    </ol>
+   
+    <a data-slide="prev" href="#carousel-container" class="left carousel-control">
+    	<span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a data-slide="next" href="#carousel-container" class="right carousel-control">
+    	<span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div>
+
+<section id="course" class="contain-section">
+	<h2>20个科目，300门专业课程</h2>
+    <h6>选择一门技能开始学习，相信知识可以改变命运</h6>
+    <div class="course-content container">
+    	<div class="course-detail"><a href="#" target="_blank"><h5>平面设计</h5><i class="course-icon"></i></a></div>
+        <div class="course-detail"><a href="#" target="_blank"><h5>视觉传达设计</h5><i class="course-icon"></i></a></div>
+        <div class="course-detail"><a href="#" target="_blank"><h5>UI设计</h5><i class="course-icon"></i></a></div>
+        <div class="course-detail"><a href="#" target="_blank"><h5>影视包装</h5><i class="course-icon"></i></a></div>
+        <div class="course-detail"><a href="#" target="_blank"><h5>视频特效设计</h5><i class="course-icon"></i></a></div>
+        <div class="course-detail"><a href="#" target="_blank"><h5>游戏动画</h5><i class="course-icon"></i></a></div>
+        <div class="course-detail"><a href="#" target="_blank"><h5>室内设计</h5><i class="course-icon"></i></a></div>
+        <div class="course-detail"><a href="#" target="_blank"><h5>建筑设计</h5><i class="course-icon"></i></a></div>
+        <div class="course-detail"><a href="#" target="_blank"><h5>工业设计</h5><i class="course-icon"></i></a></div>
+        <div class="course-detail"><a href="#" target="_blank"><h5>机械设计</h5><i class="course-icon"></i></a></div>
+        <div class="course-detail"><a href="#" target="_blank"><h5>网站开发</h5><i class="course-icon"></i></a></div>
+        <div class="course-detail"><a href="#" target="_blank"><h5>程序设计</h5><i class="course-icon"></i></a></div>
+        <div class="course-detail"><a href="#" target="_blank"><h5>移动开发</h5><i class="course-icon"></i></a></div>
+        <div class="course-detail"><a href="#" target="_blank"><h5>电子商务</h5><i class="course-icon"></i></a></div>
+        <div class="course-detail"><a href="#" target="_blank"><h5>office</h5><i class="course-icon"></i></a></div>
+    </div>
+    <div class="index-btn">
+    	<a class="btn" target="_blank" href="#">全部科目</a>
+    </div>
+</section>
+<section class="telecast contain-section">
+	<h2>7×12小时实时互动直播</h2>
+    <h4>真实而有趣的用户体验，让学习变得愉悦，更加高效</h4>
+	<div class="container telecast-container">
+    	<div class="telecast-img"><img src="img/telecast.jpg" alt="7×12小时实时互动直播"></div>
+        <div class="telecast-content">
+        	<h3>真实体验感</h3>
+            <p>我们倡导老师真人出镜教学，</br>给您一种身临真实课堂的极致体验，让学习不再孤单。</p>
+            <h3>寓教于乐</h3>
+            <p>我们把教学寄予在乐趣里，</br>让您在轻松愉快的学习氛围中快速掌握知识，提升专业能力。</p>
+            <h3>短而快</h3>
+            <p>我们的课堂从来不会废话连篇，</br>每堂课一个小时的直播，我们尽可能让您学到更多。</p>
+            <div class="index-btn">
+    			<a class="btn" target="_blank" href="#">直播试听</a>
+    		</div>
+        </div>
+    </div>
+</section>
+<section class="terminal contain-section">
+	<h2>四大终端学习数据云同步</h2>
+    <h4>支持电脑、手机、平板、电视同步学习，随时随地畅享学习乐趣</h4>
+    <div class="terminal-img visible-xs"><img src="img/icon-terminal.png" alt="四大终端"/></div>
+	<ul class="container terminal-container">
+        <li class="terminal-content">
+        	<i class="terminal-content-i"></i>
+        	<h3>手机APP</h3>
+            <p>支持iPhone以及各大主流Android手机让您随时随地畅享移动学习乐趣</p>
+        </li>
+        <li class="terminal-content">
+        	<i class="terminal-content-i"></i>
+        	<h3>Pad客户端</h3>
+            <p>一键进入直播课堂，更快速，更稳定超清直播，火爆互动</p>
+        </li>
+        <li class="terminal-content">
+        	<i class="terminal-content-i"></i>
+        	<h3>PC直播客户端</h3>
+            <p>支持iPad及各大主流Android平板移动大屏，学习利器</p>
+        </li>
+        <li class="terminal-content">
+        	<i class="terminal-content-i"></i>
+        	<h3>TV客户端</h3>
+            <p>支持各大主流Android智能TV，坐在沙发也可以享受影院大片级观看体验</p>
+        </li>
+    </ul>
+    <div class="index-btn">
+    	<a class="btn" target="_blank" href="#">立即下载</a>
+    </div>
+</section>
+
+<section class="scheme contain-section">
+	<h2>一套完整的学习方案</h2>
+    <h4>以保障学习效果为最终目的，打造颠覆性的翻转课堂体验</h4>
+	<div class="container scheme-container">
+        <div class="scheme-content-text-left pull-left">
+        	<div class="content-text">
+                <i></i>
+                <h3>录播</h3>
+                <p>我们将课程每一个知识点都录制成超清视频方便您充分利用碎片化时间提前预习</p>
+            </div>
+            <div class="content-text">
+                <i></i>
+                <h3>回放</h3>
+                <p>我们将每一节直播课堂都同步高清录制下来方便您日后反复观看学习</p>
+            </div>
+        </div>
+        <div class="scheme-content-text-right pull-right">
+        	<div class="content-text">
+                <i></i>
+                <h3>解答</h3>
+                <p>我们针对每个科目都开设专门的解答教室学习中遇到问题可以随时跟老师请教</p>
+            </div>
+            <div class="content-text">
+                <i></i>
+                <h3>作业</h3>
+                <p>每一节直播课堂结束后老师都会布置作业您提交的作业老师都会耐心点评和矫正</p>
+            </div>
+        </div>
+    </div>
+    <div class="index-btn">
+    	<a class="btn" target="_blank" href="#">立即体验</a>
+    </div>
+</section>
+
+<section class="harvest contain-section">
+	<h2>七年耕耘，一路收获</h2>
+    <h4>2008年成立至今，邢帅教育屡获学员和行业肯定</h4>
+	<ul class="container harvest-container">
+        <li class="harvest-content">
+            <i></i>
+            <p>YY教育“最受欢迎教育品牌”奖</p>
+            <p class="hidden-xs">YY教育“最受欢迎教学”奖</p>
+            <p class="hidden-xs">YY教育“最高人气教育品牌”奖</p>
+        </li>
+        <li class="harvest-content">
+            <i></i>
+            <p>中国年度创新成长企业</p>
+            <p class="strong">100强</p>
+        </li>
+        <li class="harvest-content">
+            <i></i>
+            <p>网易金翼奖</p>
+            <p>最具影响力在线教育品牌</p>
+        </li>
+        <li class="harvest-content">
+            <i></i>
+            <p>中国最具创新力在线教育品牌</p>
+        </li>
+        <li class="harvest-content">
+            <i></i>
+            <p>在线教育明星课程学校</p>
+            
+        </li>
+        <li class="harvest-content">
+            <i></i>
+            <p>2015腾讯“年度实力教育品牌”</p>
+        </li>
+        <li class="harvest-content">
+            <i></i>
+            <p>全国在线教育品牌榜第9名</p>
+        </li>
+        <li class="harvest-content">
+            <i></i>
+            <p>百度2015中国年度最佳雇主</p>
+        </li>
+    </ul>
+    <div class="index-btn">
+    	<a class="btn" target="_blank" href="#">为邢帅教育点赞</a>
+    </div>
+</section>
+
+<section class="join">
+	<div class="container contain-join ">
+        <div class="join-img pull-left">
+            <img src="img/avatar.png" alt="加入我们"/>
+        </div>
+        <div class="join-content" id="join-content">
+        	<h2>我在邢帅，您在哪里</h2>
+            <p>来邢帅教育，与7,000,000学员共同成长</p>
+            <div class="index-btn">
+    			<a class="btn" target="_blank" href="#">加入邢帅</a>
+    		</div>
+        </div>
+	</div>
+</section>
+
+<footer class="footer">
+	<div class="container">
+        <div class="footer-left">
+        	<div class="friend-link">
+                <span class="friend-link-span">友情链接：</span>
+                <p class="friend-link-p">
+                    <a href="http://www.itjiaocheng.com/" target="_blank">IT教程网</a>
+                    <a href="http://www.bjpowernode.com/" target="_blank">java培训</a>
+                    <a href="http://class.qq.com/" target="_blank">腾讯精品课</a>
+                    <a href="http://www.china-train.net/" target="_blank">中国培训网</a>
+                    <a href="http://edu.cnzz.cn" target="_blank">站长网络学院</a>
+                    <a href="http://ke.qq.com/" rel="nofollow" target="_blank">腾讯课堂</a>
+                    <a href="http://www.yiibai.com" target="_blank">易百教程</a>
+                    <a href="http://www.phpddt.com" target="_blank">PHP点点通</a>
+                    <a href="http://edu.iqiyi.com" target="_blank">爱奇艺教育</a>
+                    <a href="http://www.maiziedu.com" target="_blank">ui设计培训</a>
+                    <a href="http://q.maiziedu.com/" target="_blank">ui设计教程</a>
+                    <a href="http://www.swiftv.cn" target="_blank">SwiftV课堂</a>
+                    <a href="http://www.icoolxue.com" target="_blank">爱酷学习网</a>
+                </p>
+            </div>
+            <p class="friend-link-p us-link">
+            	<a href="#" target="_blank">关于我们</a>
+                <a href="#" target="_blank">联系我们</a>
+                <a href="#" target="_blank">加入我们</a>
+                <a href="#" target="_blank">媒体报道</a>
+                <a href="#" target="_blank">公司账号</a>
+            </p> 
+            <p>Copyright © 2013-2016 广州邢帅教育科技有限公司 粤ICP备13040992号</p>
+            <a id="approve" href="#" title="放心访问">
+            	<img src="img/approve.jpg" alt=""/>
+            </a>           	                                    
+        </div>
+        <div class="footer-right">
+        	<div class="footer-right-img">
+        		<img src="img/qcode.png" alt=""/>
+                <h6>扫一扫，下载APP</h6>
+            </div>
+            <div class="footer-right-img">
+        		<img src="img/down-app.png" alt=""/>
+            	<h6> 扫一扫，关注我们</h6>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="side-fixed">
+	<ul id="fixed-list">
+    	<li id="side-down"><a href="" target="_blank" title="扫描下载邢帅app"></a>
+        	<div id="side-app">
+            	<h6>下载邢帅APP，缓存视频随身看</h6>
+                <img src="img/qcode.png" alt="邢帅app"/>
+            </div>
+        </li>
+        <li><a href="" target="_blank" title="联系客服"></a></li>
+        <li><a href="" target="_blank" title="反馈"></a></li>
+        <li><a title="回到顶部"></a></li>
+    </ul>
+</div>
+
+
+
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+
+<script>
+$('document').ready(function(){
+	
+	
+	
+	$('.nav-phone').hover(function(){
+		$('.nav-img').css('display','block')
+		},function(){
+			$('.nav-img').css('display','none')
+			})
+	
+	//鼠标移入移出，改变下方样式
+	$(".navbar-nav li").hover(function(){
+		
+        $(this).find($(".bottom1")).animate({
+            width:"75%"
+        },500);
+        $(this).find($(".bottom2")).animate({
+            width:"75%"
+        },500);
+    },function(){
+        $(this).find($(".bottom1")).animate({
+            width:"0"
+        },500);
+        $(this).find($(".bottom2")).animate({
+            width:"0"
+        },500);
+    });
+
+	//动态改变图片位置函数
+	function changePosition(obj,a,b){
+		//index指代元素在一组中的序号，m,n指代纵横图片定位的纵横坐标,a,b指代纵横坐标随序号移动距离
+		
+		obj.each(function(index,element){
+			var m=index*a+'px';
+			var n=index*b+'px';
+			var str= (m+' '+n);
+			$(element).css('background-position',str)
+			
+			})
+			
+		}
+	//动态添加背景颜色
+	$('.course-detail').each(function(index,element){
+		var arr=['#ffcc00','#3399ff','#66cc99','#66cc66','#ff9966','#cc99cc','#9999cc']
+		$(element).css('backgroundColor',arr[index%7])
+		})
+	
+	changePosition($('.course-icon'),0,-80)
+	changePosition($('.terminal-content-i'),-200,0)
+	changePosition($('.content-text i'),0,-42)
+	changePosition($('.harvest-content i'),0,-98)
+	
+	
+	//侧边栏移入移出时显示或隐藏app图片
+	$('#side-down').hover(function(){
+		$('#side-app').css('display','block')
+		},function(){
+			$('#side-app').css('display','none')
+			})
+	
+	//页面滚动时显示或隐藏回到顶部按钮
+	$(window).scroll(function(){
+	//获取窗口的滚动条的垂直位置
+		var s = $(window).scrollTop();
+		var min_height=500;
+		var gotoTop=$("#fixed-list li:nth-child(4)")
+	//当窗口的滚动条的垂直位置大于页面的最小高度时，让返回顶部元素渐现，否则渐隐
+		if( s > min_height){
+			gotoTop.fadeIn(100);
+		}else{
+			gotoTop.fadeOut(200);
+		}
+	})
+	//点击回到顶部按钮函数
+	$('#fixed-list li:nth-child(4)').on('click',function(){
+		$('html,body').animate({scrollTop:"0"},700)
+		})
+	
+})
+</script>
+</body>
+</html>
